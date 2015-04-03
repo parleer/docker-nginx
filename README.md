@@ -1,15 +1,17 @@
-tutum-docker-nginx
+docker-nginx
 ==================
 
 Base Docker Image to run Nginx server
+
+started from tutum-docker-nginx
 
 
 Usage
 -----
 
-To create the image `tutum/nginx`, execute the following command on the `tutum-docker-nginx` folder:
+To create the image `parleer/nginx`, execute the following command on the `docker-nginx` folder:
 
-    docker build -t tutum/nginx .
+    docker build -t parleer/nginx .
 
 
 Running your Nginx docker image
@@ -17,7 +19,7 @@ Running your Nginx docker image
 
 Start your image building the external ports 80 in all interfaces to your container:
 
-    docker run -d -p 80:80 tutum/nginx
+    docker run -d -p 80:80 parleer/nginx
 
 Test your deployment:
 
@@ -30,7 +32,7 @@ Loading your custom PHP application
 
 In order to replace the "Hello World" application that comes bundled with this docker images, first create a new empty folder. Go to the new folder and create two subfolders: `sites-enabled` and `app`. Copy your configuration files to `sites-enabled` and you application files to `app`. Then create a new `Dockerfile` with the following contents:
 
-    FROM tutum/nginx
+    FROM parleer/nginx
     ADD sites-enabled/ /etc/nginx/sites-enabled/
     ADD app/ /app/
     EXPOSE 80
